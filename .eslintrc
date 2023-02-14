@@ -2,7 +2,5 @@
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": 2020
-  },
-
-  "extends": ["@salesforce/eslint-config-lwc/recommended"]
+  }
 }
