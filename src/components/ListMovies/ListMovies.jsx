@@ -1,7 +1,5 @@
 import results from "../../mocks/with-results.json";
-import noResults from "../../mocks/no-results.json";
 import "../../App.css";
-import { useMovies } from "../../hooks/useMovies";
 
 const ListMovies = ({ movies }) => {
   return (
@@ -19,7 +17,7 @@ const ListMovies = ({ movies }) => {
   );
 };
 
-const NoMovies = ({}) => {
+const NoMovies = () => {
   return (
     <>
       <ul className="movies">

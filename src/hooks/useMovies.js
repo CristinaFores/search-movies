@@ -1,4 +1,4 @@
-import { searchMovies } from "../services/movies.js";
+import { searchMovies } from "../services/movies";
 import { useMemo, useState, useRef, useCallback } from "react";
 
 export const useMovies = ({ search, reorder }) => {

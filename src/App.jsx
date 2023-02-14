@@ -1,7 +1,7 @@
 import "./App.css";
 import { ListMoviesContainer } from "./components/ListMovies/ListMovies";
 import { useMovies } from "./hooks/useMovies";
-import { useEffect, useState, useRef, useCallback } from "react";
+import { useState, useCallback } from "react";
 import useSearch from "./hooks/useSearch";
 import debounce from "just-debounce-it";
 

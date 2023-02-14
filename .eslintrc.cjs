@@ -1,34 +1,19 @@
 module.exports = {
   env: {
+    browser: true,
     es2021: true,
-    node: true,
   },
-  extends: ["xo", "prettier"],
+
+  extends: ["standard", "prettier"],
   overrides: [
     {
-      extends: ["xo-typescript", "prettier"],
-      files: ["*.ts", "*.tsx"],
+      extends: ["standard", "prettier"],
+      files: ["*.js", "*.jsx"],
       rules: {
         "no-unused-vars": ["error"],
-        "@typescript-eslint/consistent-type-definitions": [
-          "error",
-          "interface",
-        ],
-        "@typescript-eslint/indent": "off",
-        "@typescript-eslint/no-empty-function": "off",
-        "no-implicit-coercion": "off",
-      },
-    },
-    {
-      files: ["src/**/models/*.ts"],
-      rules: {
-        "@typescript-eslint/naming-convention": "off",
-      },
-    },
-    {
-      files: ["./src/**/routers/**/*.ts"],
-      rules: {
-        "new-cap": "off",
+
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
       },
     },
   ],
@@ -36,6 +21,6 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-
+  plugins: ["react"],
   rules: {},
 };
