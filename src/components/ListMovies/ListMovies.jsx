@@ -1,10 +1,7 @@
 import results from "../../mocks/with-results.json";
-import noResults from "../../mocks/no-results.json";
 import "../../App.css";
 
-export const ListMovies = ({ movies }) => {
-  const hasMovies = movies.length > 0;
-
+const ListMovies = ({ movies }) => {
   return (
     <>
       <ul className="movies">
@@ -20,10 +17,18 @@ export const ListMovies = ({ movies }) => {
   );
 };
 
-export const NoMovies = () => {
+const NoMovies = () => {
   return (
     <>
-      <p className="no-movies">No movies found</p>
+      <ul className="movies">
+        {results.Search.map((movie) => (
+          <li key={movie.imdbID} className="movie">
+            <h3>{movie.Title}</h3>
+            <p>{movie.Year}</p>
+            <img src={movie.Poster} alt={movie.Title} />
+          </li>
+        ))}
+      </ul>
     </>
   );
 };
@@ -31,5 +36,11 @@ export const NoMovies = () => {
 export const ListMoviesContainer = ({ movies }) => {
   const hasMovies = movies?.length > 0;
 
-  return <>{hasMovies ? <ListMovies movies={movies} /> : <NoMovies />}</>;
+  return hasMovies ? (
+    <ListMovies movies={movies} />
+  ) : (
+    <>
+      <NoMovies results={results} />
+    </>
+  );
 };
