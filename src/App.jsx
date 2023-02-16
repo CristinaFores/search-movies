@@ -45,8 +45,13 @@ const App = () => {
               value={search}
               name="query"
               type="text"
-              placeholder="Avengers, Star wars, The Matrix..."
+              placeholder="Avengers, Star wars..."
+              className="input-search"
             />
+
+            <button className="button-search" type="submit">
+              Buscar
+            </button>
 
             <label>
               Ordernar alfabeticamente
@@ -56,8 +61,6 @@ const App = () => {
                 onChange={reorderHandler}
               />
             </label>
-
-            <button type="submit">Search</button>
           </form>
           {error && <p style={{ color: "red" }}>{error}</p>}
         </header>
