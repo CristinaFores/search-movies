@@ -1,4 +1,3 @@
-import results from "../../mocks/with-results.json";
 import "../../App.css";
 
 const ListMovies = ({ movies }) => {
@@ -16,19 +15,10 @@ const ListMovies = ({ movies }) => {
     </>
   );
 };
-
-const NoMovies = () => {
+export const NoMovies = () => {
   return (
     <>
-      <ul className="movies">
-        {results.Search.map((movie) => (
-          <li key={movie.imdbID} className="movie">
-            <h3>{movie.Title}</h3>
-            <p>{movie.Year}</p>
-            <img src={movie.Poster} alt={movie.Title} />
-          </li>
-        ))}
-      </ul>
+      <p className="no-movies">No se han encontrado resultados</p>
     </>
   );
 };
@@ -40,7 +30,7 @@ export const ListMoviesContainer = ({ movies }) => {
     <ListMovies movies={movies} />
   ) : (
     <>
-      <NoMovies results={results} />
+      <NoMovies />
     </>
   );
 };
